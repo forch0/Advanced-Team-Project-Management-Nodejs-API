@@ -18,7 +18,7 @@ import cors from "cors";
 import session from "cookie-session";
 import { config } from "./config/app.config";
 import connectDatabase from "./config/database.config";
-import "./config/passport.config";
+// import "./config/passport.config";
 import passport from "passport";
 
 const app = express();
