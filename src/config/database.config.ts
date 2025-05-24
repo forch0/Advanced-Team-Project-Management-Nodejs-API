@@ -18,10 +18,10 @@ import { config } from "./app.config";
 const connectDatabase = async () => {
   try {
     await mongoose.connect(config.MONGO_URI);
-    console.log("Connected to Mongo database");
-  } catch (error) {
-    console.log("Error connecting to Mongo database");
-    process.exit(1);
+    console.log("✅ Connected to MongoDB Atlas");
+  } catch (error: any) {
+    console.error("❌ Error connecting to MongoDB:", error.message);
+    process.exit(1); // Exit app on DB connection failure
   }
 };
 
