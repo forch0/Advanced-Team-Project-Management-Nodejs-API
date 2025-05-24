@@ -17,7 +17,7 @@ import express, { NextFunction, Request, Response } from "express";
 import cors from "cors";
 import session from "cookie-session";
 import { config } from "./config/app.config";
-import connectDatabase from "./config/database.config";
+// import connectDatabase from "./config/database.config";
 // import "./config/passport.config";
 import passport from "passport";
 
@@ -45,9 +45,16 @@ app.use(
   })
 );
 
+app.get("/", (req: Request, res: Response) => {
+  res.status(200).json({
+    message: "Welcome to the Team Project Management API",
+  });
+}
+);
+
 
 
 app.listen(config.PORT, async () => {
   console.log(`Server listening on port ${config.PORT} in ${config.NODE_ENV}`);
-  await connectDatabase();
+  // await connectDatabase();
 });
